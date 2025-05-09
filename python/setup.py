@@ -2,6 +2,7 @@
 
 import os
 from setuptools import setup, find_packages
+from setuptools.discovery import find_package_path
 import toml
 
 # Read version from Cargo.toml
@@ -30,8 +31,8 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     zip_safe=False,
-    packages=["payjoin"],
-    package_dir={"payjoin": "./src/payjoin"},
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     version=version,
     license="MIT or Apache 2.0",
     has_ext_modules=lambda: True,

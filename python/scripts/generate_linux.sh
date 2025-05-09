@@ -5,6 +5,9 @@ ${PYBIN}/pip install -r requirements.txt -r requirements-dev.txt
 LIBNAME=libpayjoin_ffi.so
 LINUX_TARGET=x86_64-unknown-linux-gnu
 
+echo "Cleaning old generated files..."
+rm -rf python/src/payjoin/*
+
 echo "Generating payjoin_ffi.py..."
 cd ../
 # This is a test script the actual release should not include the test utils feature
